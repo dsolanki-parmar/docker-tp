@@ -1,0 +1,3 @@
+Following is the command to create simple port forwarder for docker web
+
+docker run -d --name web01 -p8080:80 --rm yeasy/simple-web 
