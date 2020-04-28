@@ -1,0 +1,12 @@
+Install docker compose
+
+and then create docker-compose.yml
+
+and then run "docker-compose up"
+it will setup dockers  
+
+To cleanup use "docker-compose down"
+
+1.	curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+2.	chmod +x /usr/local/bin/docker-compose
