@@ -1,0 +1,10 @@
+Portainer : this is to manage the docker on the host
+u can manage containers/images ..
+
+Run the bellow command and then run that using
+
+http://host-ip:8085
+
+
+$ docker volume create portainer_data
+$ docker run -d -p 8000:8000 -p 8085:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer

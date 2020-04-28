@@ -1,0 +1,27 @@
+Follow
+https://docs.docker.com/engine/reference/builder/
+
+Create the Dockerfile as mentioneded above
+
+cd docker-file-path
+docker build . Or with image name
+docker build -t myapp:1.0 .
+docker build -t docker-acct-name/myapp:1.0 .
+
+docker images :
+it will list the image created
+
+Test it with
+docker run -d -p8080:8080docker-acct-name/myapp:1.0
+
+docker ps
+
+Create the image from comtainer
+
+docker commit  container-id  docker_acct_name/mytestapp:1.0
+
+You can login to docker hub and upload ur image
+Uploaded on dpka Username on Docker hub
+
+docker login
+docker push image-name
