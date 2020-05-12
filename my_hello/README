@@ -3,9 +3,15 @@ Create the executable
 >gcc hello.c -o hello
 
 Run it from the top directory of my_hello
->docker build my_hello --tag my_hello
+>docker build my_hello --tag dpka/my_hello
 
 It will create the image
 Now run the container
 
->docker run my_hello
+>docker run dpka/my_hello
+
+You can upload this image to docker hub
+>docker login
+userid:
+pwd:
+> docker push dpka/my_hello
