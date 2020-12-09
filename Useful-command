@@ -1,0 +1,81 @@
+Image Operations commands:
+
+Observe the directory Before creation of container
+ls -l /var/lib/docker/image/overlay2/imagedb/content/sha256
+
+Deploy a Ubuntu server container
+Step 1 : docker pull ubuntu:18.04
+
+Step 2 :  List Docker images
+docker images
+docker image ls
+
+Step 3 :  Delete a image
+docker rmi <image id  or name:tag>
+
+Step 4 : Docker image history
+docker image history <image id>
+
+Step 5 :  Image inspect
+docker image inspect  <image id>
+
+Step 6 :   Remove unused images
+docker image prune
+
+Step 7 :    Remove image
+docker image rm <image id>
+docker rmi <image id>
+docker rmi  -f <image id>
+Container Operations:
+
+Observe the directory Before creation of container
+ls -l /var/lib/docker/containers/
+
+Deploy a Ubuntu server container
+Step 1 :docker run -it ubuntu:18.04 /bin/bash
+#uname -a
+
+docker run --name some-nginx -d -p 8080:80 nginx
+Step 2.A :  list the running container
+docker ps
+
+Step 2.b : Login to the container
+docker  exec -it  <containerid> /bin/bash
+
+Step 2.C :  list process running in container
+root@04707a043ac9:/# ps -ef
+
+Step 3 :  exit from the container
+root@04707a043ac9:/# exit
+
+Step 4 : Observe the directory  After creation of container on docker host login
+ls -l /var/lib/docker/containers/
+
+Step 5 :  Listing the Docker images
+docker images
+Step 6 :   List the running containers
+docker ps
+Step 7 :    Fetch info about container
+docker inspect 04707a043ac9
+
+Above info comes from
+/var/lib/docker/containers/0f4ea7ba2e814169377263918a9cb027f72f0295c45dc96f8661d0630501bc27/config.v2.json
+
+Step 8 :     Login to your container
+docker exec -i -t 04707a043ac9 /bin/bash
+
+If you successful login you should be in your container bash login as below
+root@04707a043ac9:/#
+
+Step 9 :      Validate your IP address of container
+root@04707a043ac9:/#  ip a
+
+Exiting the container
+root@04707a043ac9:/#  exit
+
+Another way to shutdown your container ( login as root on your host)
+docker inspect 3b6bf78299b0 | grep Pid
+kill 4683
+
+You will notice container is stopped
+docker ps
