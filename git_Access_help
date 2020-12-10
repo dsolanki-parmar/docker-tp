@@ -1,0 +1,16 @@
+
+
+To add git access:
+first generate the ssh keys
+
+Run the terminal on your VM and execute the following commands 
+ssh-keygen -t rsa -C "your_email"
+Press Enter to select the default path
+
+Enter and re-enter a password (or press enter twice to have no password)
+Go to Files→Home and press Ctrl+H to show the hidden files and directories (if you are in the web console. If you SSHed, read the note below for step 5-7*)
+Go to .ssh directory and open the file id_rsa.pub (will open in Libre Office) Do not modify this file.
+Copy the entire contents (starts with ssh-rha and ends with your email)
+Login in your github account add these ssh keys in settings SSH.
+Once done
+you can directly access the repo using ssh and git commands
